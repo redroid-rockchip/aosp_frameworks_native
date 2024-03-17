@@ -553,7 +553,7 @@ sp<IBinder> SurfaceFlinger::createDisplay(const String8& displayName, bool secur
     Mutex::Autolock _l(mStateLock);
     // Display ID is assigned when virtual display is allocated by HWC.
     DisplayDeviceState state;
-    state.isSecure = secure;
+    state.isSecure = true; // = secure;
     state.displayName = displayName;
     mCurrentState.displays.add(token, state);
     mInterceptor->saveDisplayCreation(state);
